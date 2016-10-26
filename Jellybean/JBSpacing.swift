@@ -19,7 +19,7 @@ import Foundation
  This is a simple implementation based on the Leitner System for spaced repetition
  
  */
-public class JBSpacing {
+public class JBSpacing: NSObject, NSCoding {
   
   /// Starts at zero
   private(set) public var daysUntilRepetition = 0
@@ -27,9 +27,12 @@ public class JBSpacing {
   /// Starts at today
   private(set) public var dueDate = Date()
 
+  public override var description: String {
+    return "Days until repetition: \(daysUntilRepetition)\nDueDate: \(dueDate)"
+  }
   
-  public init() {
-
+  public override init() {
+    super.init()
   }
 
   
@@ -53,6 +56,17 @@ public class JBSpacing {
     } else if let nextDueDate = Calendar.current.date(byAdding: .day, value: spacing, to: dueDate) {
       dueDate = nextDueDate      
     }
+  }
+  
+  // MARK: - NSCoding
+  public func encode(with aCoder: NSCoder) {
+    aCoder.encode(self.daysUntilRepetition, forKey: "daysUntilRepetition")
+    aCoder.encode(self.dueDate, forKey: "dueDate")
+  }
+  
+  public required init?(coder aDecoder: NSCoder) {
+    self.daysUntilRepetition = Int(aDecoder.decodeInt64(forKey: "daysUntilRepetition"))
+    self.dueDate = aDecoder.decodeObject(forKey: "dueDate") as! Date
   }
 
   
