@@ -327,6 +327,7 @@
 		C94A59631DC052F400695639 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
@@ -348,6 +349,7 @@
 		C94A59641DC052F400695639 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
@@ -410,6 +412,7 @@
 				C94A59641DC052F400695639 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C94A59651DC052F400695639 /* Build configuration list for PBXNativeTarget "JellybeanTests" */ = {
 			isa = XCConfigurationList;
@@ -418,6 +421,7 @@
 				C94A59671DC052F400695639 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
